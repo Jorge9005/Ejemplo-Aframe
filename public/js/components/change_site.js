@@ -20,13 +20,13 @@ AFRAME.registerComponent('change-site', {
       var parentEntity = el.parentNode;
       var grandParentEntity = parentEntity.parentNode;
 
-      var thisAPlane = parentEntity.querySelector("a-plane");
-      thisAPlane.classList.remove("clickable");
-      console.log("thisAPlane: " + JSON.stringify(thisAPlane.classList));
+      var thisAImage = parentEntity.querySelector("a-image");
+      thisAImage.classList.remove("clickable");
+      console.log("thisAImage: " + JSON.stringify(thisAImage.classList));
 
-      var allAPlane = grandParentEntity.querySelectorAll("a-plane");
+      var allAPlane = grandParentEntity.querySelectorAll("a-image");
       Object.keys(allAPlane).forEach(function(key){
-        if(allAPlane[key] != thisAPlane) {
+        if(allAPlane[key] != thisAImage) {
           allAPlane[key].classList.add("clickable");
         }
       });
@@ -44,7 +44,7 @@ AFRAME.registerComponent('change-site', {
         allAText[key].setAttribute("color", "gray");
       });
 
-      var aText = thisAPlane.querySelector("a-text");
+      var aText = thisAImage.querySelector("a-text");
       if(aText) aText.setAttribute("color", "white");
 
       var allACircle = grandParentEntity.querySelectorAll("a-circle");
