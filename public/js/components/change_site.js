@@ -14,7 +14,7 @@ AFRAME.registerComponent('change-site', {
   init: function () {
     var data = this.data;
     var el = this.el;
-    this.el.addEventListener('mouseenter', function () {
+    this.el.addEventListener('click', function () {
       console.log("clickió");
 
       var parentEntity = el.parentNode;
@@ -24,10 +24,10 @@ AFRAME.registerComponent('change-site', {
       thisAImage.classList.remove("clickable");
       console.log("thisAImage: " + JSON.stringify(thisAImage.classList));
 
-      var allAPlane = grandParentEntity.querySelectorAll("a-image");
-      Object.keys(allAPlane).forEach(function(key){
-        if(allAPlane[key] != thisAImage) {
-          allAPlane[key].classList.add("clickable");
+      var allAImage = grandParentEntity.querySelectorAll("a-image");
+      Object.keys(allAImage).forEach(function(key){
+        if(allAImage[key] != thisAImage) {
+          allAImage[key].classList.add("clickable");
         }
       });
 
@@ -36,21 +36,9 @@ AFRAME.registerComponent('change-site', {
         allABox[key].setAttribute("visible", "false");
       });
 
-      var parentEntityABox = parentEntity.querySelector("a-box");
-      parentEntityABox.setAttribute("visible", "true");
-
-      var allAText = grandParentEntity.querySelectorAll("a-text");
-      Object.keys(allAText).forEach(function(key){
-        allAText[key].setAttribute("color", "gray");
-      });
-
-      var aText = thisAImage.querySelector("a-text");
-      if(aText) aText.setAttribute("color", "white");
-
-      var allACircle = grandParentEntity.querySelectorAll("a-circle");
-      Object.keys(allACircle).forEach(function(key){
-        allACircle[key].setAttribute("visible", "false");
-        allACircle[key].classList.remove("clickable");
+      Object.keys(allAImage).forEach(function(key){
+        allAImage[key].setAttribute("visible", "false");
+        allAImage[key].classList.remove("clickable");
       });
 
       var allACircleInThisZone = parentEntity.querySelectorAll(data.zone);
