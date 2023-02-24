@@ -31,11 +31,6 @@ AFRAME.registerComponent('change-site', {
         }
       });
 
-      var allABox = grandParentEntity.querySelectorAll("a-box");
-      Object.keys(allABox).forEach(function(key){
-        allABox[key].setAttribute("visible", "false");
-      });
-
       Object.keys(allAImage).forEach(function(key){
         allAImage[key].setAttribute("visible", "false");
         allAImage[key].classList.remove("clickable");
