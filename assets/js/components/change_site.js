@@ -36,10 +36,10 @@ AFRAME.registerComponent('change-site', {
         allAImage[key].classList.remove("clickable");
       });
 
-      var allACircleInThisZone = parentEntity.querySelectorAll(data.zone);
-      Object.keys(allACircleInThisZone).forEach(function(key){
-        allACircleInThisZone[key].setAttribute("visible", "true");
-        allACircleInThisZone[key].classList.add("clickable");
+      var allAImageInThisZone = parentEntity.querySelectorAll(data.zone);
+      Object.keys(allAImageInThisZone).forEach(function(key){
+        allAImageInThisZone[key].setAttribute("visible", "true");
+        allAImageInThisZone[key].classList.add("clickable");
       });
 
       var mySky = document.querySelector("#my-sky");

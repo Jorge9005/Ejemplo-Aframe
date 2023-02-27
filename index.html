@@ -33,6 +33,7 @@
             <img id="img-360-EdCADE" src="assets/img/EdCADE.jpg" alt="img-360-EdificioCADE">
             <img id="img-360-EdCIDET" src="assets/img/EdCIDET.jpg" alt="img-360-Edificio-CIDET">
             <img id="img-360-EdCCPI" src="assets/img/EdCCPI.jpg" alt="img-360-Edificio-CCPI">
+            <img id="img-360-Ed1-5" src="assets/img/Ed1-5.jpg" alt="img-360-Edificio-1.5">
             <img id="img-flecha" src="assets/img/flecha.png" alt="img-flecha">
             <audio id="sound-birds" src="assets/sounds/387978__dcpoke__birds-singing-03.ogg" preload="auto"></audio>
             <audio id="sound-wind-outside" src="assets/sounds/135034__mrlindstrom__windloop6sec.ogg" preload="auto"></audio>
@@ -45,29 +46,32 @@
         </a-camera>
 
         <a-entity position="0 0 -3">
-        
-            <!--Huella-->
-            <a-entity zone="huella">
-                <a-image id="arrow-up" src="assets/img/flecha.png" position="0 3.5 0" rotation="0 0 90" class="pasillo-principal clickable" visible="true"
+            <a-entity> <!--En zone se pone el nombre de la zone con un punto porque hace alusión a una clase, así es como funciona, 
+                cambiando la zona por clases para poder traer consigo los elementos que queramos y no solo uno.-->
+
+                <!--Huella-->
+                <a-image id="arrow-up" src="assets/img/flecha.png" position="0 3.5 0" rotation="0 0 90" class="huella clickable" visible="true"
                     change-site="img: #img-360-PasilloPrincipal; sound: #sound-birds; zone: .pasillo-principal"
                     sound="on: click; src: #magic-click">
                 </a-image>
-                <a-image id="arrow-left" src="assets/img/flecha.png" position="-4 1.5 0" rotation="0 0 180" class="pasillo-principal clickable" visible="true"
+                <a-image id="arrow-left" src="assets/img/flecha.png" position="-4 1.5 0" rotation="0 0 180" class="huella clickable" visible="true"
                     change-site="img: #img-360-EdCIDET; sound: #sound-birds; zone: .edificio-cidet"
                     sound="on: click; src: #magic-click">
                 </a-image>
-                <a-image id="arrow-right" src="assets/img/flecha.png" position="4 1.5 0" rotation="0 0 0" class="pasillo-principal clickable" visible="true"
+                <a-image id="arrow-right" src="assets/img/flecha.png" position="4 1.5 0" rotation="0 0 0" class="huella clickable" visible="true"
                     change-site="img: #img-360-EdCCPI; sound: #sound-birds; zone: .edificio-ccpi"
                     sound="on: click; src: #magic-click">
                 </a-image>
-            </a-entity>
 
-            <!--Pasillo Principal-->
-            <a-entity zone=".pasillo-principal">
-                <a-image id="arrow-up" src="assets/img/flecha.png" position="0 3.5 0" rotation="0 0 90" class="edificio-cade clickable" visible="false"
+                <!--Pasillo Principal-->
+                <a-image id="arrow-up" src="assets/img/flecha.png" position="0 3.5 0" rotation="0 0 90" class="pasillo-principal clickable" visible="false"
                     change-site="img: #img-360-EdCADE; sound: #sound-birds; zone: .edificio-cade"
                     sound="on: click; src: #magic-click">
-                </a-image>                
+                </a-image>
+                <a-image id="arrow-right" src="assets/img/flecha.png" position="4 1.5 0" rotation="0 0 0" class="pasillo-principal clickable" visible="false"
+                    change-site="img: #img-360-Ed1-5; sound: #sound-birds; zone: .edificio-1-5"
+                    sound="on: click; src: #magic-click">
+                </a-image>              
             </a-entity>
         </a-entity>
 
