@@ -10,7 +10,7 @@
     <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
     <script src="https://unpkg.com/aframe-event-set-component@5.x.x/dist/aframe-event-set-component.min.js"></script>
-    
+
     <script src="assets/js/components/toggle_sound.js"></script>
     <script src="assets/js/components/change_site.js"></script>
     <link rel="stylesheet" href="assets/css/styles.css">
@@ -26,16 +26,33 @@
 
     <a-scene id="my-scene">
         <a-assets>
-            <img id="boxTexture" src="assets/img/texture_wear.jpg" alt="texture">
-            <img id="exit" src="assets/img/exit.jpg" alt="img-exit">
-            <img id="img-360-index" src="assets/img/index.jpg" alt="img-360-index">
+            <img id="img-360-Biblioteca" src="assets/img/Biblioteca.jpg" alt="img-360-Biblioteca">
+            <img id="img-360-Cafeteria" src="assets/img/Cafeteria.jpg" alt="img-360-Cafeteria">
+            <img id="img-360-CanchasFutbol" src="assets/img/CanchasFutbol.jpg" alt="img-360-CanchasFutbol">
+            <img id="img-360-Ed1-5" src="assets/img/Ed1-5.jpg" alt="img-360-Ed1-5">
+            <img id="img-360-Ed2-Baños" src="assets/img/Ed2-Baños.jpg" alt="img-360-Ed2-Baños">
+            <img id="img-360-Ed3-ParteTrasera" src="assets/img/Ed3-ParteTrasera.jpg" alt="img-360-Ed3-ParteTrasera">
+            <img id="img-360-Ed3" src="assets/img/Ed3.jpg" alt="img-360-Ed3">
+            <img id="img-360-Ed4" src="assets/img/Ed4.jpg" alt="img-360-Ed4">
+            <img id="img-360-Ed6-ParteTrasera" src="assets/img/Ed6-ParteTrasera.jpg" alt="img-360-Ed6-ParteTrasera">
+            <img id="img-360-Ed7-Cafeteria" src="assets/img/Ed7-Cafeteria.jpg" alt="img-360-Ed7-Cafeteria">
+            <img id="img-360-Ed7-ParteTrasera" src="assets/img/Ed7-ParteTrasera.jpg" alt="img-360-Ed7-ParteTrasera">
+            <img id="img-360-Ed7" src="assets/img/Ed7.jpg" alt="img-360-Ed7">
+            <img id="img-360-Ed9" src="assets/img/Ed9.jpg" alt="img-360-Ed9">
+            <img id="img-360-EdBecas" src="assets/img/EdBecas.jpg" alt="img-360-EdBecas">
+            <img id="img-360-EdCADE" src="assets/img/EdCADE.jpg" alt="img-360-EdCADE">
+            <img id="img-360-EdCCPI" src="assets/img/EdCCPI.jpg" alt="img-360-EdCCPI">
+            <img id="img-360-EdCIDET" src="assets/img/EdCIDET.jpg" alt="img-360-EdCIDET">
+            <img id="img-360-FimeBook" src="assets/img/FimeBook.jpg" alt="img-360-FimeBook">
+            <img id="img-360-huella" src="assets/img/huella.jpg" alt="img-360-huella">
+            <img id="img-360-LabQuimica" src="assets/img/LabQuimica.jpg" alt="img-360-LabQuimica">
+            <img id="img-360-MaterialDidactico" src="assets/img/MaterialDidactico.jpg" alt="img-360-MaterialDidactico">
+            <img id="img-360-OsoFime" src="assets/img/OsoFime.jpg" alt="img-360-OsoFime">
+            <img id="img-360-PasilloEd3-Ed4" src="assets/img/PasilloEd3-Ed4.jpg" alt="img-360-PasilloEd3-Ed4">
             <img id="img-360-PasilloPrincipal" src="assets/img/PasilloPrincipal.jpg" alt="img-360-PasilloPrincipal">
-            <img id="img-360-EdCADE" src="assets/img/EdCADE.jpg" alt="img-360-EdificioCADE">
-            <img id="img-360-EdCIDET" src="assets/img/EdCIDET.jpg" alt="img-360-Edificio-CIDET">
-            <img id="img-360-EdCCPI" src="assets/img/EdCCPI.jpg" alt="img-360-Edificio-CCPI">
-            <img id="img-360-Ed1-5" src="assets/img/Ed1-5.jpg" alt="img-360-Edificio-1.5">
-            <img id="img-360-Casilleros" src="assets/img/Casilleros.jpg" alt="img-360-Casilleros">
+            <img id="img-360-Polideportivo" src="assets/img/Polideportivo.jpg" alt="img-360-Polideportivo">
 
+            <img id="boxTexture" src="assets/img/texture_wear.jpg" alt="texture">
             <img id="img-flecha" src="assets/img/flecha.png" alt="img-flecha">
             <audio id="sound-birds" src="assets/sounds/387978__dcpoke__birds-singing-03.ogg" preload="auto"></audio>
             <audio id="sound-wind-outside" src="assets/sounds/135034__mrlindstrom__windloop6sec.ogg" preload="auto"></audio>
@@ -48,7 +65,7 @@
         </a-camera>
 
         <a-entity position="0 0 -3">
-            <a-entity> <!--En zone se pone el nombre de la zone con un punto porque hace alusión a una clase, así es como funciona, 
+            <a-entity> <!--En zone se pone el nombre de la zone con un punto porque hace alusión a una clase, así es como funciona,
                 cambiando la zona por clases para poder traer consigo los elementos que queramos y no solo uno.-->
 
                 <!--Huella-->
@@ -70,18 +87,22 @@
                     change-site="img: #img-360-EdCADE; sound: #sound-birds; zone: .edificio-cade"
                     sound="on: click; src: #magic-click">
                 </a-image>
-                <a-image id="arrow-left" src="assets/img/flecha.png" position="-4 1.5 0" rotation="0 0 180" class="pasillo-principal clickable" visible="true"
+                <a-image id="arrow-left" src="assets/img/flecha.png" position="-4 1.5 0" rotation="0 0 180" class="pasillo-principal clickable" visible="false"
                     change-site="img: #img-360-Casilleros; sound: #sound-birds; zone: .casilleros"
                     sound="on: click; src: #magic-click">
                 </a-image>
                 <a-image id="arrow-right" src="assets/img/flecha.png" position="4 1.5 0" rotation="0 0 0" class="pasillo-principal clickable" visible="false"
                     change-site="img: #img-360-Ed1-5; sound: #sound-birds; zone: .edificio-1-5"
                     sound="on: click; src: #magic-click">
-                </a-image>              
+                </a-image>
+                <a-image id="arrow-down" src="assets/img/flecha.png" position="0 -0.5 0" rotation="0 0 0" class="pasillo-principal clickable" visible="false"
+                    change-site="img: #img-360-huella; sound: #sound-birds; zone: .huella"
+                    sound="on: click; src: #magic-click">
+                </a-image>
             </a-entity>
         </a-entity>
 
-        <a-sky id="my-sky" src="#img-360-index" sound="src: #sound-birds; loop: true" data-sounding="false" rotation="0 180 0">
+        <a-sky id="my-sky" src="#img-360-huella" sound="src: #sound-birds; loop: true" data-sounding="false" rotation="0 180 0">
         </a-sky>
 
     </a-scene>
